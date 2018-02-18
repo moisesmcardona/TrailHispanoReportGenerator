@@ -10,10 +10,12 @@ Public Class Form1
     Private WithEvents DiscordClientLogger As DebugLogger
     Private MySQLString As String = String.Empty
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim SQLQuery As String = "SELECT DISTINCT * FROM posts WHERE traildate LIKE '" & TextBox1.Text & "%' AND voted=1 ORDER BY username ASC, link ASC"
-        Dim Connection As MySqlConnection = New MySqlConnection(MySQLString)
-        Dim Command As New MySqlCommand(SQLQuery, Connection)
-        Connection.Open()
+        Dim Command As New MySqlCommand With {
+            .Connection = New MySqlConnection(MySQLString)
+        }
+        Command.Parameters.Add("@date", MySqlDbType.VarChar).Value = TextBox1.Text + "%"
+        Command.CommandText = "SELECT DISTINCT * FROM posts WHERE traildate LIKE @date AND voted=1 ORDER BY username ASC, link ASC"
+        Command.Connection.Open()
         Dim reader As MySqlDataReader = Command.ExecuteReader
         If reader.HasRows = True Then
             Dim LogFile As New StreamWriter("report-" & TextBox1.Text.Replace("/", "-") & ".txt", False)
@@ -108,6 +110,8 @@ Public Class Form1
             LogFile.Close()
             Threading.Thread.Sleep(5000)
             PublishReport(FullDate)
+        Else
+            MsgBox("No hay posts para la fecha especificada")
         End If
     End Sub
     Private Sub PublishReport(FullDate As String)
@@ -134,7 +138,6 @@ Public Class Form1
             request.ContentLength = byteArray.Length
             Dim dataStream As Stream = request.GetRequestStream()
             dataStream.Write(byteArray, 0, byteArray.Length)
-            dataStream.Close()
             Dim response As Net.WebResponse = request.GetResponse()
             dataStream = response.GetResponseStream()
             Dim reader As New StreamReader(dataStream)
