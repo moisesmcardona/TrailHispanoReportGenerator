@@ -60,8 +60,10 @@ Partial Class Form1
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "TrailHispano"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

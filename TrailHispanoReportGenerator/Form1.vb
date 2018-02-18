@@ -98,7 +98,7 @@ Public Class Form1
                 LogFile.WriteLine("@" & User & " | [" & Title.Replace("|", ":").Replace("&", "and") & "](https://steemit.com/tag/@" & Link & ")")
             End While
             LogFile.WriteLine("<center>![](https://steemitimages.com/DQmXit6wguuGaWRXDL3KJQM1Jr6UjRnZDr8n1jfg88vpmAr/image.png)</center>")
-            LogFile.WriteLine("<center>¿Quieres que tus posts sean considerados para que el trail lo vote? [Sigue las siguientes instrucciones para unirte al Trail](https://steemit.com/spanish/@moisesmcardona/tutorial-actualizado-trail-hispano-en-discord-herramientas-y-reglas)</center>")
+            LogFile.WriteLine("<center>¿Quieres que tus posts sean considerados para que el trail lo vote? [Sigue las siguientes instrucciones para unirte al Trail](https://steemit.com/castellano/@trailhispano/participar-trailhispano)</center>")
             LogFile.WriteLine("<center>![](https://steemitimages.com/DQmXit6wguuGaWRXDL3KJQM1Jr6UjRnZDr8n1jfg88vpmAr/image.png)</center>")
             LogFile.WriteLine("<center>Chat en Discord: [https://discord.gg/XqgGQH3](https://discord.gg/XqgGQH3)</center>")
             LogFile.WriteLine("<center>![](https://steemitimages.com/DQmXit6wguuGaWRXDL3KJQM1Jr6UjRnZDr8n1jfg88vpmAr/image.png)</center>")
