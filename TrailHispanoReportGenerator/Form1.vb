@@ -15,9 +15,8 @@ Public Class Form1
         Dim Command As New MySqlCommand(SQLQuery, Connection)
         Connection.Open()
         Dim reader As MySqlDataReader = Command.ExecuteReader
-        Dim Profile As String = "", PK As String = "", VP As String = ""
-        Dim LogFile As New StreamWriter("report-" & TextBox1.Text.Replace("/", "-") & ".txt", False)
         If reader.HasRows = True Then
+            Dim LogFile As New StreamWriter("report-" & TextBox1.Text.Replace("/", "-") & ".txt", False)
             Dim TextBoxDate As DateTime = DateTime.ParseExact(TextBox1.Text, "M/d/yyyy", Nothing)
             Dim Month As String = TextBoxDate.ToString("MM")
             Dim MonthName As String = ""
