@@ -104,7 +104,7 @@ Public Class Form1
             LogFile.WriteLine("<center>Chat en Discord: [https://discord.gg/XqgGQH3](https://discord.gg/XqgGQH3)</center>")
             LogFile.WriteLine("<center>![](https://steemitimages.com/DQmXit6wguuGaWRXDL3KJQM1Jr6UjRnZDr8n1jfg88vpmAr/image.png)</center>")
             LogFile.WriteLine("<center>Otras iniciativas para ayudar a la comunidad hispana a crecer:</center>")
-            LogFile.WriteLine("<center>[Click aquí para ver la lista de las inciativas](https://steem.place/Iniciativas)</center>")
+            LogFile.WriteLine("<center>[Click aquí para ver la lista de las inciativas](https://steem.place/es/Iniciativas)</center>")
             LogFile.WriteLine("<center>![](https://steemitimages.com/DQmXit6wguuGaWRXDL3KJQM1Jr6UjRnZDr8n1jfg88vpmAr/image.png)</center>")
             LogFile.WriteLine("<center>Reporte generado por el software de @moisesmcardona. [Vótalo como Witness Presionando aquí](https://v2.steemconnect.com/sign/account-witness-vote?witness=moisesmcardona&approve=1)</center>" & Environment.NewLine & Environment.NewLine)
             LogFile.Close()
